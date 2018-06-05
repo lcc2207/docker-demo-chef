@@ -34,7 +34,7 @@ docker_container node['docker-demo']['containername'] do
   port node['docker-demo']['ports']
   tag node['docker-demo']['regversion']
   binds node['docker-demo']['binds']
-  env node['docker-demo']['env']
+  env node['docker-demo']['env'] unless node['docker-demo']['env'].to_s.strip.empty?
   restart_policy 'always'
   action :run_if_missing
 end
