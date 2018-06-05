@@ -4,7 +4,7 @@ maintainer_email 'lynn@scalr.com'
 license 'All Rights Reserved'
 description 'Installs/Configures docker-demo'
 long_description 'Installs/Configures docker-demo'
-version '0.1.2'
+version '0.1.3'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
 issues_url 'https://github.com/lcc2207/docker-demo-chef/issues'

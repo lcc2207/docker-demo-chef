@@ -31,9 +31,10 @@ end
 docker_container node['docker-demo']['containername'] do
   container_name node['docker-demo']['containername']
   image node['docker-demo']['imgname']
-  port node['docker-demo']['portmap']
+  port node['docker-demo']['ports']
   tag node['docker-demo']['regversion']
   binds node['docker-demo']['binds']
+  env node['docker-demo']['env']
   restart_policy 'always'
   action :run_if_missing
 end
