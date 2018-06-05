@@ -33,7 +33,7 @@ docker_container node['docker-demo']['docker']['containername'] do
   image node['docker-demo']['docker']['imgname']
   port node['docker-demo']['docker']['portmap']
   tag node['docker-demo']['docker']['regversion']
-  binds ['/var/lib/jenkins:/var/jenkins_home']
+  binds node['docker-demo']['docker']['binds']
   restart_policy 'always'
   action :run_if_missing
 end

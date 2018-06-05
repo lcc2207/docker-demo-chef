@@ -4,3 +4,4 @@ default['docker-demo']['docker']['imgname'] = 'httpd'
 default['docker-demo']['docker']['containername'] = 'demo1'
 default['docker-demo']['docker']['portmap'] = ['80:80']
 default['docker-demo']['docker']['regversion'] = 'latest'
+default['docker-demo']['docker']['binds'] = []
