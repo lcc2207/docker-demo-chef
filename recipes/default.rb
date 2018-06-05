@@ -5,7 +5,7 @@ end
 
 # install docker
 docker_installation 'default' do
-  version node['docker-demo']['docker']['version']
+  version node['docker-demo']['version']
   action :create
 end
 
@@ -20,20 +20,20 @@ end
 
 docker_service_manager 'default' do
   host ["tcp://#{node['ipaddress']}:2375", 'unix:///var/run/docker.sock']
-  logfile node['docker-demo']['docker']['logfile']
+  logfile node['docker-demo']['logfile']
   action :start
 end
 
-docker_image node['docker-demo']['docker']['imgname'] do
+docker_image node['docker-demo']['imgname'] do
   action :pull_if_missing
 end
 
-docker_container node['docker-demo']['docker']['containername'] do
-  container_name node['docker-demo']['docker']['containername']
-  image node['docker-demo']['docker']['imgname']
-  port node['docker-demo']['docker']['portmap']
-  tag node['docker-demo']['docker']['regversion']
-  binds node['docker-demo']['docker']['binds']
+docker_container node['docker-demo']['containername'] do
+  container_name node['docker-demo']['containername']
+  image node['docker-demo']['imgname']
+  port node['docker-demo']['portmap']
+  tag node['docker-demo']['regversion']
+  binds node['docker-demo']['binds']
   restart_policy 'always'
   action :run_if_missing
 end
