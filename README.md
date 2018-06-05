@@ -1,4 +1,3 @@
-# docker-apache-demo
+# docker-demo
 
 TODO: Enter the cookbook description here.
-
